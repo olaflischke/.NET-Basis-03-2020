@@ -1,0 +1,93 @@
+﻿<Window
+    x:Class="EierfarmUi.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:EierfarmUi"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="350"
+    Height="273"
+    mc:Ignorable="d">
+    <Canvas>
+        <ComboBox
+            x:Name="cbxTiere"
+            Canvas.Left="114"
+            Canvas.Top="34"
+            Width="120"
+            DisplayMemberPath="Name"/>
+        <TextBox
+            x:Name="txtName"
+            Canvas.Left="114"
+            Canvas.Top="61"
+            Width="120"
+            Height="23"
+            Text="{Binding ElementName=cbxTiere, Path=SelectedItem.Name}" />
+        <TextBox
+            x:Name="txtGewicht"
+            Canvas.Left="114"
+            Canvas.Top="89"
+            Width="120"
+            Height="23"
+            Text="{Binding ElementName=cbxTiere, Path=SelectedItem.Gewicht}" />
+        <ListBox
+            Canvas.Left="114"
+            Canvas.Top="117"
+            Width="120"
+            Height="100"
+            ItemsSource="{Binding ElementName=cbxTiere, Path=SelectedItem.Eier}" />
+
+        <Button
+            x:Name="btnNeu"
+            Canvas.Left="240"
+            Canvas.Top="36"
+            Width="74"
+            Click="btnNeu_Click"
+            Content="Huhn" />
+        <Button
+            x:Name="btnFuettern"
+            Canvas.Left="240"
+            Canvas.Top="92"
+            Width="74"
+            Content="Füttern"
+            Click="btnFuettern_Click"/>
+        <Button
+            x:Name="btnEiLegen"
+            Canvas.Left="240"
+            Canvas.Top="117"
+            Width="74"
+            Content="Ei legen"
+            Click="btnEiLegen_Click"/>
+        <Label
+            Canvas.Left="52"
+            Canvas.Top="33"
+            Content="Label" />
+        <Label
+            Canvas.Left="52"
+            Canvas.Top="57"
+            Content="Label" />
+        <Label
+            Canvas.Left="52"
+            Canvas.Top="85"
+            Content="Label" />
+        <Label
+            Canvas.Left="52"
+            Canvas.Top="117"
+            Content="Label" />
+        <Button
+            x:Name="btnNeueGans"
+            Canvas.Left="239"
+            Canvas.Top="61"
+            Width="74"
+            Click="btnNeueGans_Click"
+            Content="Gans" />
+        <Button
+            x:Name="btnSave"
+            Canvas.Left="239"
+            Canvas.Top="197"
+            Width="74"
+            Content="Speichern"
+            Click="btnSave_Click"/>
+
+    </Canvas>
+</Window>
